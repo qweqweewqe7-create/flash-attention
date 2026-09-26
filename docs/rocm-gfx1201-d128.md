@@ -37,6 +37,12 @@ PyTorch SDPA is included as a compact secondary reference. It used `torch.nn.fun
 - upstream extension SHA-256: `96B84DD18F239EC1107510853E867494EE73E303ABDFE9243A2370ACAC966F2F`
 - final extension SHA-256: `532C57C8D94DF814E3BC82466215022B920342C238339B570046C0D9E784E0AC`
 
+The current upstream-facing CK branch lives under
+[`projects/composablekernel`](https://github.com/qweqweewqe7-create/rocm-libraries/tree/gfx1201-fa-d128/projects/composablekernel)
+in the ROCm Libraries monorepo. The standalone `composable_kernel` fork is kept
+only as a build-compatible mirror for FlashAttention's existing submodule
+layout.
+
 The upstream kernel and dispatch logic were left unchanged. A three-line import-path shim was applied only to let pristine CK's generator run under Windows embeddable Python, which does not add the invoked script directory to `sys.path`.
 
 ## Correctness gate

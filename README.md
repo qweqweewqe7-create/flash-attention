@@ -6,6 +6,13 @@ official Dao-AILab or AMD release. See
 [the implementation, validation, and upstream comparison report](docs/rocm-gfx1201-d128.md)
 before using the prebuilt wheel or adapting the source.
 
+The primary CK source branch is maintained in the current ROCm Libraries
+monorepo at
+[`qweqweewqe7-create/rocm-libraries:gfx1201-fa-d128`](https://github.com/qweqweewqe7-create/rocm-libraries/tree/gfx1201-fa-d128/projects/composablekernel).
+The `csrc/composable_kernel` submodule points to a standalone compatibility
+mirror of the same validated source because FlashAttention's build expects CK
+at the submodule root.
+
 The branch keeps unsupported softcap calls from silently producing unsoftcapped
 results and falls back to the upstream CK paths outside the optimized dispatch
 conditions.
