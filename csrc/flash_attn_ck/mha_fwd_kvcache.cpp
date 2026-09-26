@@ -287,10 +287,12 @@ mha_fwd_kvcache(at::Tensor &q,                                      // batch_siz
                 bool is_causal,
                 int window_size_left,
                 int window_size_right,
-                const float /*softcap*/,
+                const float softcap,
                 bool is_rotary_interleaved, // if true, rotary combines indices 0 & 1, else indices 0 & rotary_dim / 2
                 int num_splits)
 {
+    TORCH_CHECK(softcap == 0.0f,
+                "CK FlashAttention does not support softcap; use softcap=0 or a backend with softcap support.");
     auto q_dtype = q.dtype();
     TORCH_CHECK(q_dtype == torch::kFloat16 || q_dtype == torch::kBFloat16,
                 "FlashAttention only support fp16 and bf16 data type");

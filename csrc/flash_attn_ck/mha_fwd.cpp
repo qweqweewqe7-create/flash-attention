@@ -177,10 +177,12 @@ mha_fwd(at::Tensor &q,                            // batch_size x seqlen_q x num
         bool is_causal,
         int window_size_left,
         int window_size_right,
-        const float /*softcap*/,
+        const float softcap,
         const bool return_dropout_randval,
         std::optional<at::Generator> gen_)
 {
+    TORCH_CHECK(softcap == 0.0f,
+                "CK FlashAttention does not support softcap; use softcap=0 or a backend with softcap support.");
     auto q_dtype = q.dtype();
     TORCH_CHECK(q_dtype == torch::kFloat16 || q_dtype == torch::kBFloat16,
                 "FlashAttention only support fp16 and bf16 data type");

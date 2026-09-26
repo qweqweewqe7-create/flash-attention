@@ -228,11 +228,13 @@ mha_varlen_bwd(const at::Tensor &dout,                   // total_q x num_heads 
                const bool is_causal,
                int window_size_left,
                int window_size_right,
-               const float /*softcap*/,
+               const float softcap,
                const bool deterministic,
                std::optional<at::Generator> gen_,
                std::optional<at::Tensor> &rng_state_)
 {
+    TORCH_CHECK(softcap == 0.0f,
+                "CK FlashAttention does not support softcap; use softcap=0 or a backend with softcap support.");
 #ifdef FLASHATTENTION_DISABLE_BACKWARD
     TORCH_CHECK(false, "This flash attention build does not support backward.");
 #endif
