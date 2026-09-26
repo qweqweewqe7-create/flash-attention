@@ -1,3 +1,15 @@
+# Experimental ROCm gfx1201 D=128 build
+
+This branch contains an experimental FlashAttention backward optimization for
+BF16, head dimension 128 on AMD gfx12, validated on an RX 9070 XT. It is not an
+official Dao-AILab or AMD release. See
+[the implementation, validation, and upstream comparison report](docs/rocm-gfx1201-d128.md)
+before using the prebuilt wheel or adapting the source.
+
+The branch keeps unsupported softcap calls from silently producing unsoftcapped
+results and falls back to the upstream CK paths outside the optimized dispatch
+conditions.
+
 # FlashAttention
 This repository provides the official implementation of FlashAttention and
 FlashAttention-2 from the

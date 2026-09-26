@@ -1,0 +1,256 @@
+{
+  "config": {
+    "implementation": "torch.nn.functional.scaled_dot_product_attention",
+    "dispatch": "PyTorch default ROCm SDPA dispatch",
+    "repeats": 3,
+    "seqs": [
+      1024,
+      2048,
+      4096
+    ],
+    "B": 1,
+    "H": 16,
+    "D": 128,
+    "warmup": 20,
+    "rounds": 7,
+    "iters": 30
+  },
+  "results": {
+    "1024": [
+      {
+        "seq": 1024,
+        "median_ms": 0.47849799891312916,
+        "mean_ms": 0.47695128477755044,
+        "min_ms": 0.4626006672779719,
+        "max_ms": 0.4846736639738083,
+        "rounds_ms": [
+          0.4626006672779719,
+          0.47672899862130486,
+          0.47634299993515017,
+          0.47930899957815803,
+          0.4846736639738083,
+          0.4805056651433309,
+          0.47849799891312916
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      },
+      {
+        "seq": 1024,
+        "median_ms": 0.4793933302164078,
+        "mean_ms": 0.477262379016195,
+        "min_ms": 0.4626320004463196,
+        "max_ms": 0.48163566291332244,
+        "rounds_ms": [
+          0.4626320004463196,
+          0.47658266524473825,
+          0.47858299513657887,
+          0.4793933302164078,
+          0.4804583340883255,
+          0.48163566291332244,
+          0.4815516650676727
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      },
+      {
+        "seq": 1024,
+        "median_ms": 0.4800326635440191,
+        "mean_ms": 0.4784275226649784,
+        "min_ms": 0.4620480020840963,
+        "max_ms": 0.4907716671625773,
+        "rounds_ms": [
+          0.4620480020840963,
+          0.4764396647612254,
+          0.4907716671625773,
+          0.4800326635440191,
+          0.480363330245018,
+          0.4807233323653539,
+          0.4786139984925588
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      }
+    ],
+    "2048": [
+      {
+        "seq": 2048,
+        "median_ms": 1.4448230067888896,
+        "mean_ms": 1.415279425893511,
+        "min_ms": 1.3525239944458007,
+        "max_ms": 1.4507739941279094,
+        "rounds_ms": [
+          1.3525239944458007,
+          1.3601043303807576,
+          1.4051970005035401,
+          1.4479023377100626,
+          1.4448230067888896,
+          1.4456313172976176,
+          1.4507739941279094
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      },
+      {
+        "seq": 2048,
+        "median_ms": 1.4448013345400492,
+        "mean_ms": 1.4166599018233164,
+        "min_ms": 1.3502800027529398,
+        "max_ms": 1.4543259898821512,
+        "rounds_ms": [
+          1.3502800027529398,
+          1.3582186619440715,
+          1.4060883164405822,
+          1.4507633368174235,
+          1.4521416703859964,
+          1.4448013345400492,
+          1.4543259898821512
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      },
+      {
+        "seq": 2048,
+        "median_ms": 1.4454366525014242,
+        "mean_ms": 1.4164552359353928,
+        "min_ms": 1.3547073364257813,
+        "max_ms": 1.4506543358167012,
+        "rounds_ms": [
+          1.3547073364257813,
+          1.3622673312822977,
+          1.4039753317832946,
+          1.4479463338851928,
+          1.4454366525014242,
+          1.4501993298530578,
+          1.4506543358167012
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      }
+    ],
+    "4096": [
+      {
+        "seq": 4096,
+        "median_ms": 4.758226633071899,
+        "mean_ms": 4.7482854320889425,
+        "min_ms": 4.684354718526205,
+        "max_ms": 4.769023640950521,
+        "rounds_ms": [
+          4.684354718526205,
+          4.743788353602091,
+          4.758226633071899,
+          4.755897029240926,
+          4.761030658086141,
+          4.765676991144816,
+          4.769023640950521
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      },
+      {
+        "seq": 4096,
+        "median_ms": 4.761161057154338,
+        "mean_ms": 4.751577772412982,
+        "min_ms": 4.675179974238078,
+        "max_ms": 4.774001995722453,
+        "rounds_ms": [
+          4.675179974238078,
+          4.756269375483195,
+          4.758092339833578,
+          4.761161057154338,
+          4.767275985081991,
+          4.769063679377238,
+          4.774001995722453
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      },
+      {
+        "seq": 4096,
+        "median_ms": 4.764166291554769,
+        "mean_ms": 4.752103326434181,
+        "min_ms": 4.678495995203654,
+        "max_ms": 4.768718687693278,
+        "rounds_ms": [
+          4.678495995203654,
+          4.7545146465301515,
+          4.764166291554769,
+          4.76231034596761,
+          4.7683216571807865,
+          4.768718687693278,
+          4.768195660909017
+        ],
+        "finite_gradients": true,
+        "torch": "2.15.0a0+rocm10.1.0a20260822",
+        "hip": "7.16.26332",
+        "gpu": "AMD Radeon RX 9070 XT",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true
+      }
+    ]
+  },
+  "summary": {
+    "1024": {
+      "median_of_medians_ms": 0.4793933302164078,
+      "range_ms": [
+        0.47849799891312916,
+        0.4800326635440191
+      ]
+    },
+    "2048": {
+      "median_of_medians_ms": 1.4448230067888896,
+      "range_ms": [
+        1.4448013345400492,
+        1.4454366525014242
+      ]
+    },
+    "4096": {
+      "median_of_medians_ms": 4.761161057154338,
+      "range_ms": [
+        4.758226633071899,
+        4.764166291554769
+      ]
+    }
+  }
+}
